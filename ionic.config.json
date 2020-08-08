@@ -1,0 +1,7 @@
+{
+  "name": "todo-reactive",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
