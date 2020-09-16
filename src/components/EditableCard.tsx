@@ -1,31 +1,64 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
-    IonCard,
-    IonCardContent,
     IonTextarea,
-    IonText
+    IonInput,
+    IonContent,
+    IonButton,
+    IonHeader,
+    IonToolbar,
+    IonButtons,
+    IonTabBar,
+    IonFooter
 } from "@ionic/react"
 import "./EditableCard.css";
 
 interface CardProps {
-    defaultTitle?: string
+
+    note?: { text: string, title: string };
+    onChange?: (data: any) => void;
+    onDismissModal(args: any): void;
 }
 
-export const EditableCard: React.FC<CardProps> = ({defaultTitle}) => {
-    // const [title, setTitle] = useState(defaultTitle || "Add Title");
-    const [note, setNote] = useState("some dummy text");
-    useEffect(() => {
+export const EditableCard: React.FC<CardProps> = ({ note, onChange, onDismissModal }) => {
+    const [autoGrow, setAutoGrow] = useState(true)
 
-    },[])
+    const textareaRef: any = useRef(null);
+    useEffect(() => {
+        console.dir(textareaRef.current)
+    },[]);
+    const [title, setTitle] = useState(note?.title);
+    const [text, setText] = useState(note?.text);
+
+    const handleSave = () => {
+        const data = { title: title, text: text};
+        onDismissModal(data);
+    }
     return (
-            /* <IonInput
-            type="text" 
-            placeholder="Title"
-            inputmode="text"/> */
-            <IonTextarea
-            placeholder="Note..."
-            // autoGrow={true}
-            value={note}
-            onIonChange={e => setNote(e.detail.value!)}/>
+        <>
+            <IonContent className="ion-padding">
+                <IonInput
+                    type="text"
+                    placeholder="Title"
+                    inputmode="text"
+                    value={title}
+                    onIonChange={(e) => {
+                        const title = e.detail.value!
+                        setTitle(title);
+                    }}
+                />
+                <IonTextarea
+                    autoGrow={autoGrow}
+                    ref={textareaRef}
+                    placeholder="Note..."
+                    value={text}
+                    debounce={100}
+                    onIonChange={e => {
+                        setText(e.detail.value!);
+                    }}
+                />
+            </IonContent>
+            <IonButton onClick={handleSave}>Done</IonButton>
+            <IonButton onClick={handleSave}>Delete</IonButton>
+        </>
     )
-  };
+};
