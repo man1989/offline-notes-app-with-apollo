@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {createDb, GraphQLReplicator} from "./database";
+import {createDb, GraphQLReplicator} from "../data/database";
 import { RxDatabase } from "rxdb";
 interface Note{
     note_id: string;

@@ -8,7 +8,7 @@ import { add as addIcon } from "ionicons/icons";
 import './Home.css';
 import ExploreContainer from '../components/ExploreContainer';
 import { EditableCard } from "../components/EditableCard";
-import { useDatabase } from "../data/useDatabase";
+import { useDatabase } from "../hooks/useDatabase";
 
 type note = {
   note_id: string;

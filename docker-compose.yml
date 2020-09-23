@@ -1,0 +1,26 @@
+version: "3.3"
+services:
+  webapp:
+    build: ./ui
+    restart: always
+    environment:
+      PORT: 3006
+    ports:
+      - 3006:3006
+    stdin_open: true  
+
+  graphql-server:
+    build: ./server
+    environment:
+      host: "0.0.0.0"
+      port: 4000
+      db_host: mongo-db
+      db_port: 27017
+    ports:
+      - 4000:4000
+    depends_on:
+      - mongo-db
+  
+  mongo-db:
+    image: mongo
+    restart: always

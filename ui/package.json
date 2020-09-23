@@ -1,27 +1,11 @@
 {
-  "name": "todo-reactive",
+  "name": "notes",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@capacitor/android": "^2.4.0",
-    "@capacitor/core": "2.4.0",
-    "@ionic-native/sqlite": "^5.27.0",
     "@ionic/react": "^5.3.1",
     "@ionic/react-router": "^5.3.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.0",
-    "@testing-library/user-event": "^8.0.3",
-    "@types/jest": "^24.0.25",
-    "@types/node": "^12.12.24",
-    "@types/react": "^16.9.17",
-    "@types/react-dom": "^16.9.4",
-    "@types/react-router": "^5.1.4",
-    "@types/react-router-dom": "^5.1.3",
-    "cordova-sqlite-storage": "^5.0.1",
     "graphql": "^15.3.0",
-    "graphql-client": "^2.0.1",
-    "graphql-compose": "^7.19.4",
-    "graphql-subscriptions": "^1.1.0",
     "ionicons": "^5.0.0",
     "pouchdb-adapter-cordova-sqlite": "^2.0.7",
     "pouchdb-adapter-idb": "^7.2.2",
@@ -30,9 +14,7 @@
     "react-dom": "^16.13.0",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
     "rxdb": "^9.5.0",
-    "rxjs": "^6.6.2",
     "subscriptions-transport-ws": "^0.9.17",
     "typescript": "3.8.3",
     "uuid": "^8.3.0"
@@ -59,9 +41,21 @@
     ]
   },
   "devDependencies": {
+    "@capacitor/android": "^2.4.0",
+    "@capacitor/core": "2.4.0",
     "@capacitor/cli": "2.4.0",
     "@types/uuid": "^8.0.1",
-    "http-proxy-middleware": "^1.0.5"
+    "http-proxy-middleware": "^1.0.5",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^8.0.3",
+    "@types/jest": "^24.0.25",
+    "@types/node": "^12.12.24",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-router": "^5.1.4",
+    "@types/react-router-dom": "^5.1.3",
+    "react-scripts": "3.4.1"
   },
   "description": "An Ionic project"
 }
